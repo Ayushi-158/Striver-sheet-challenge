@@ -1,0 +1,26 @@
+pair<int,int> missingAndRepeating(vector<int> &A, int n)
+{
+	map<int,int>mp;
+//int n=A.size();
+for(int i=1;i<=n;i++){
+    mp[i]=0;
+}
+for(int i=0;i<n;i++){
+    mp[A[i]]++;
+}
+int missing=-1;
+int repeating=-1;
+for(auto it:mp){
+    if(it.second==0){
+        missing=it.first;
+    }
+    else if(it.second==2){
+        repeating=it.first;
+    }
+}
+pair<int,int>nanda;
+nanda.first=missing;
+nanda.second=repeating;
+return nanda;
+	
+}
